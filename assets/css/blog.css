@@ -1,0 +1,22 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode li {
+    background-color: #444;
+    border-color: #555;
+}
