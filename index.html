@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +10,26 @@
 </head>
 <body>
     <header>
-        <h1>What's on your mind?</h1>
+        <nav>
+            <button id="toggleMode">🌞/🌜</button>
+        </nav>
     </header>
     <main>
-        <form id="blogForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="title">Blog Title:</label>
-            <input type="text" id="title" name="title" required>
-            <label for="content">Blog Content:</label>
-            <textarea id="content" name="content" required></textarea>
-            <button type="submit">Submit</button>
-            <p id="message" class="error"></p>
-        </form>
+        <div class="left">
+            <div class="circle">My First Blog</div>
+        </div>
+        <div class="right">
+            <form id="blogForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="title">Blog Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="content">Blog Content:</label>
+                <textarea id="content" name="content" required></textarea>
+                <button type="submit">Submit</button>
+                <p id="message" class="error"></p>
+            </form>
+        </div>
     </main>
     <script src="assets/js/form.js"></script>
     <script src="assets/js/logic.js"></script>
