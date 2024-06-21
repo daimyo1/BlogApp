@@ -1,22 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const postsList = document.getElementById('postsList');
     const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+    const blogPostsContainer = document.getElementById('blogPosts');
 
     if (blogPosts.length === 0) {
-        postsList.innerHTML = '<li>No blog posts available</li>';
+        blogPostsContainer.innerHTML = '<p>No blog posts available</p>';
     } else {
+        blogPostsContainer.innerHTML = '';
+
         blogPosts.forEach(post => {
-            const postItem = document.createElement('li');
-            postItem.innerHTML = `<h2>${post.title}</h2><p>${post.content}</p><p><em>by ${post.username}</em></p>`;
-            postsList.appendChild(postItem);
+            const postContainer = document.createElement('div');
+            postContainer.classList.add('blog-post');
+
+            const usernameBox = document.createElement('div');
+            usernameBox.classList.add('username-box');
+            usernameBox.textContent = post.username;
+
+            const titleContentBox = document.createElement('div');
+            titleContentBox.classList.add('title-content-box');
+
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = post.title;
+
+            const contentElement = document.createElement('p');
+            contentElement.textContent = post.content;
+
+            titleContentBox.appendChild(titleElement);
+            titleContentBox.appendChild(contentElement);
+
+            postContainer.appendChild(usernameBox);
+            postContainer.appendChild(titleContentBox);
+
+            blogPostsContainer.appendChild(postContainer);
         });
     }
-
-    const toggleModeButton = document.getElementById('toggleMode');
-    const body = document.body;
-    toggleModeButton.addEventListener('click', function() {
-        body.classList.toggle('dark-mode');
-    });
 
     const backButton = document.getElementById('backButton');
     backButton.addEventListener('click', function() {
