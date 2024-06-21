@@ -6,8 +6,8 @@ So that I can showcase my thoughts and experiences
 
 ## Acceptance Criteria
 
--GIVEN a personal blog
-WHEN I load the app,
+- GIVEN a personal blog
+- WHEN I load the app,
 THEN I am presented with the landing page containing a form with labels and inputs for username, blog title, and blog content.
 WHEN I submit the form,
 THEN blog post data is stored to localStorage.
